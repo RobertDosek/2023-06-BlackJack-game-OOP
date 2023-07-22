@@ -1,6 +1,5 @@
 from hand import Hand
 from deck import Deck
-from card import Card
 from chips import Chips
 
 playing = True

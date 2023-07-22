@@ -1,8 +1,4 @@
 from card import values
-from card import Card
-from card import suits
-from card import ranks
-from deck import Deck
 
 
 class Hand:
