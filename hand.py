@@ -1,6 +1,7 @@
-# from card import values
-# from card import Card
-import card
+from card import values
+from card import Card
+from card import suits
+from card import ranks
 from deck import Deck
 
 
@@ -10,13 +11,16 @@ class Hand:
         self.value = 0  # start with zero value
         self.aces = 0  # add an attribute to keep track of aces
 
-    def add_card(self, card):
-        self.cards.append(card)
-        self.value += card.values[card.rank]
+    def add_card(self, cd):
+        self.cards.append(cd)
+        self.value += values[cd.rank]
 
         # track aces
-        if card.rank == 'Ace':
+        if cd.rank == 'Ace':
             self.aces += 1
 
     def adjust_for_ace(self):
-        pass
+        # if total value > and I still have an ace then change my ace to 1 instead of 11
+        while self.value > 21 and self.aces > 0:
+            self.value -= 10
+            self.aces += 1
